@@ -4,6 +4,7 @@ var served_by = `shopme-network/${hostname}/${process.pid}`
 
 const cluster = require('cluster');
 const totalCPUs = require('os').cpus().length;
+const PORT = preocess.env.PORT || 3400
 
 if (cluster.isMaster) {
     console.log(`Number of CPUs is ${totalCPUs}`);
@@ -75,5 +76,5 @@ if (cluster.isMaster) {
 
     app.use("/", mainRouter)
 
-    app.listen(3400, () => console.log("Channel service running process id : " + process.pid))
+    app.listen(PORT, () => console.log("Channel service running process id : " + process.pid))
 }

@@ -5,23 +5,24 @@ var served_by = `shopme-network/${hostname}/${process.pid}`
 
 const cluster = require('cluster');
 const totalCPUs = require('os').cpus().length;
+const PORT = process.env.PORT || 3500
 
-// if (cluster.isMaster) {
-//     console.log(`Number of CPUs is ${totalCPUs}`);
-//     console.log(`Master ${process.pid} is running`);
+if (cluster.isMaster) {
+    console.log(`Number of CPUs is ${totalCPUs}`);
+    console.log(`Master ${process.pid} is running`);
 
-//     // Fork workers.
-//     for (let i = 0; i < totalCPUs; i++) {
-//         cluster.fork();
-//     }
+    // Fork workers.
+    for (let i = 0; i < totalCPUs; i++) {
+        cluster.fork();
+    }
 
-//     cluster.on('exit', (worker, code, signal) => {
-//         console.log(`worker ${worker.process.pid} died`);
-//         console.log("Let's fork another worker!");
-//         cluster.fork();
-//     });
+    cluster.on('exit', (worker, code, signal) => {
+        console.log(`worker ${worker.process.pid} died`);
+        console.log("Let's fork another worker!");
+        cluster.fork();
+    });
 
-// } else {
+} else {
     const express = require("express")
     const app = express()
 
@@ -78,4 +79,4 @@ const totalCPUs = require('os').cpus().length;
     app.use("/", mainRouter)
 
     app.listen(3500, () => console.log("Shows service running"))
-// }
+}

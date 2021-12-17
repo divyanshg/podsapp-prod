@@ -1,6 +1,6 @@
-# Spotify: UI Clone with React Native / Expo
+# PodsApp
 
-web demo: [Expo Spotify](https://expo-spotify.vercel.app)
+web demo: [Expo Podsapp](https://expo-Podsapp.vercel.app)
 
 [![made with expo](https://img.shields.io/badge/MADE%20WITH%20EXPO-000.svg?style=for-the-badge&logo=expo&labelColor=4630eb&logoWidth=20)](https://github.com/expo/expo) [![supports iOS and Android](https://img.shields.io/badge/Platforms-Native-4630EB.svg?style=for-the-badge&logo=EXPO&labelColor=000&logoColor=fff)](https://github.com/expo/expo) [![supports web](https://img.shields.io/badge/Platforms-Web-4630EB.svg?style=for-the-badge&logo=EXPO&labelColor=000&logoColor=fff)](https://github.com/expo/expo)
 
@@ -48,7 +48,7 @@ Run Project Locally: `yarn dev` or `yarn start`
 
 Currently Expo Web support is **not production ready**, but if you want to see how this project looks on the web as a PWA (Progressive Web App)... using [react-native-web](https://github.com/necolas/react-native-web) and react-dom.
 
-[PWA: Expo Spotify](https://expo-spotify.calebnance.now.sh) looks best on a mobile device, but not bad on desktop!
+[PWA: Expo Podsapp](https://expo-Podsapp.calebnance.now.sh) looks best on a mobile device, but not bad on desktop!
 
 **Dev with Expo Web**
 - Remove node_modules if they exist: `rm -rf nodes_modules`
